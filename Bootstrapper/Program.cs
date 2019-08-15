@@ -46,6 +46,14 @@ namespace Bootstrapper {
             Process process = Process.GetProcessesByName("ffxiv_dx11").FirstOrDefault();
 
             if (process != null) {
+
+                MemoryHandler.Instance.SignaturesFoundEvent += delegate (object sender, SignaturesFoundEvent e) {
+                    foreach (KeyValuePair<string, Signature> kvp in e.Signatures)
+                    {
+                        Console.WriteLine($"{kvp.Key} => {kvp.Value.GetAddress():X}");
+                    }
+                };
+
                 MemoryHandler.Instance.SetProcess(
                     new ProcessModel {
                         IsWin64 = true,
@@ -56,12 +64,6 @@ namespace Bootstrapper {
                     Thread.Sleep(1000);
                     Console.WriteLine("Scanning...");
                 }
-
-                MemoryHandler.Instance.SignaturesFoundEvent += delegate(object sender, SignaturesFoundEvent e) {
-                    foreach (KeyValuePair<string, Signature> kvp in e.Signatures) {
-                        Console.WriteLine($"{kvp.Key} => {kvp.Value.GetAddress():X}");
-                    }
-                };
             }
 
             Console.WriteLine("To exit this application press \"Enter\".");
