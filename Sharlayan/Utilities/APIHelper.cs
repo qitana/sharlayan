@@ -34,7 +34,7 @@ namespace Sharlayan.Utilities {
                 EnsureDictionaryValues(actions, file);
             }
             else {
-                APIResponseToDictionary(actions, file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/master/xivdatabase/{patchVersion}/actions.json");
+                APIResponseToDictionary(actions, file, $"https://qitana.github.io/sharlayan-resources/xivdatabase/{patchVersion}/actions.json");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Sharlayan.Utilities {
                 return JsonConvert.DeserializeObject<IEnumerable<Signature>>(json, Constants.SerializerSettings);
             }
             else {
-                var json = APIResponseToJSON($"https://raw.githubusercontent.com/qitana/sharlayan-resources/master/signatures/{patchVersion}/{architecture}.json");
+                var json = APIResponseToJSON($"https://qitana.github.io/sharlayan-resources/signatures/{patchVersion}/{architecture}.json");
                 IEnumerable<Signature> resolved = JsonConvert.DeserializeObject<IEnumerable<Signature>>(json, Constants.SerializerSettings);
 
                 File.WriteAllText(file, JsonConvert.SerializeObject(resolved, Formatting.Indented, Constants.SerializerSettings), Encoding.GetEncoding(932));
@@ -63,7 +63,7 @@ namespace Sharlayan.Utilities {
                 EnsureDictionaryValues(statusEffects, file);
             }
             else {
-                APIResponseToDictionary(statusEffects, file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/master/xivdatabase/{patchVersion}/statuses.json");
+                APIResponseToDictionary(statusEffects, file, $"https://qitana.github.io/sharlayan-resources/xivdatabase/{patchVersion}/statuses.json");
             }
         }
 
@@ -76,7 +76,7 @@ namespace Sharlayan.Utilities {
                 return EnsureClassValues<StructuresContainer>(file);
             }
 
-            return APIResponseToClass<StructuresContainer>(file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/master/structures/{patchVersion}/{architecture}.json");
+            return APIResponseToClass<StructuresContainer>(file, $"https://qitana.github.io/sharlayan-resources/structures/{patchVersion}/{architecture}.json");
         }
 
         public static void GetZones(ConcurrentDictionary<uint, MapItem> mapInfos, string patchVersion = "latest") {
@@ -89,7 +89,7 @@ namespace Sharlayan.Utilities {
                 EnsureDictionaryValues(mapInfos, file);
             }
             else {
-                APIResponseToDictionary(mapInfos, file, $"https://raw.githubusercontent.com/qitana/sharlayan-resources/master/xivdatabase/{patchVersion}/zones.json");
+                APIResponseToDictionary(mapInfos, file, $"https://qitana.github.io/sharlayan-resources/xivdatabase/{patchVersion}/zones.json");
             }
         }
 
