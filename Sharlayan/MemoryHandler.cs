@@ -93,6 +93,13 @@ namespace Sharlayan {
             return BitConverter.TryToInt64(value, 0);
         }
 
+        public float GetSingle(IntPtr address, long offset = 0)
+        {
+            byte[] value = new byte[4];
+            this.Peek(new IntPtr(address.ToInt64() + offset), value);
+            return BitConverter.TryToSingle(value, 0);
+        }
+
         public long GetPlatformInt(IntPtr address, long offset = 0) {
             byte[] bytes = new byte[this.ProcessModel.IsWin64
                                         ? 8

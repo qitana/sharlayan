@@ -72,6 +72,7 @@
     <Compile Include="Core\ActionContainer.cs" />
     <Compile Include="Core\ActorItem.cs" />
     <Compile Include="Core\ActorItemBase.cs" />
+    <Compile Include="Core\CameraInfo.cs" />
     <Compile Include="Core\ChatCleaner.cs" />
     <Compile Include="Core\ChatEntry.cs" />
     <Compile Include="Core\ChatLogItem.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Core\Enums\Inventory.cs" />
     <Compile Include="Core\Interfaces\IActionContainer.cs" />
     <Compile Include="Core\Interfaces\IActorItem.cs" />
+    <Compile Include="Core\Interfaces\ICameraInfo.cs" />
     <Compile Include="Core\Interfaces\IChatLogItem.cs" />
     <Compile Include="Core\Interfaces\ICurrentPlayer.cs" />
     <Compile Include="Core\Interfaces\IEnmityItem.cs" />
@@ -105,6 +107,8 @@
     <Compile Include="Events\SignaturesFoundEvent.cs" />
     <Compile Include="Events\ExceptionEvent.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Models\ReadResults\CameraResult.cs" />
+    <Compile Include="Models\Structures\CameraInfo.cs" />
     <Compile Include="Models\XIVDatabase\ActionItem.cs" />
     <Compile Include="Models\XIVDatabase\MapItem.cs" />
     <Compile Include="Models\ReadResults\ActionResult.cs" />
@@ -137,6 +141,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Signature.cs" />
     <Compile Include="Reader.Actor.cs" />
+    <Compile Include="Reader.Camera.cs" />
     <Compile Include="Reader.ChatLog.cs" />
     <Compile Include="Reader.cs" />
     <Compile Include="Reader.Actions.cs" />
