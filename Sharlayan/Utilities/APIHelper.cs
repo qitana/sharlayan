@@ -25,7 +25,8 @@ namespace Sharlayan.Utilities {
 
     internal static class APIHelper {
         private static WebClient _webClient = new WebClient {
-            Encoding = Encoding.UTF8
+            Encoding = Encoding.UTF8,
+            CachePolicy =new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore)
         };
 
         public static void GetActions(ConcurrentDictionary<uint, ActionItem> actions, string patchVersion = "latest") {
