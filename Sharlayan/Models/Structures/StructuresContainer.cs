@@ -18,6 +18,8 @@ namespace Sharlayan.Models.Structures {
 
         public EnmityItem EnmityItem { get; set; } = new EnmityItem();
 
+        public AgroItem AgroItem { get; set; } = new AgroItem();
+
         public HotBarItem HotBarItem { get; set; } = new HotBarItem();
 
         public InventoryContainer InventoryContainer { get; set; } = new InventoryContainer();
