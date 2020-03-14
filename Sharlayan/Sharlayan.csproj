@@ -109,6 +109,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Models\ReadResults\CameraResult.cs" />
     <Compile Include="Models\Structures\CameraInfo.cs" />
+    <Compile Include="Models\Structures\AgroItem.cs" />
     <Compile Include="Models\XIVDatabase\ActionItem.cs" />
     <Compile Include="Models\XIVDatabase\MapItem.cs" />
     <Compile Include="Models\ReadResults\ActionResult.cs" />

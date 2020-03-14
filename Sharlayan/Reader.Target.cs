@@ -121,7 +121,7 @@ namespace Sharlayan {
                                         var address = new IntPtr(enmityStructure.ToInt64() + i * enmitySourceSize);
                                         var enmityEntry = new EnmityItem {
                                             ID = (uint) MemoryHandler.Instance.GetPlatformInt(address, MemoryHandler.Instance.Structures.EnmityItem.ID),
-                                            Name = MemoryHandler.Instance.GetString(address + MemoryHandler.Instance.Structures.EnmityItem.Name),
+                                            Name = string.Empty,
                                             Enmity = MemoryHandler.Instance.GetUInt32(address + MemoryHandler.Instance.Structures.EnmityItem.Enmity)
                                         };
                                         if (enmityEntry.ID <= 0) {
