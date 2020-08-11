@@ -57,9 +57,9 @@ namespace Sharlayan {
                         for (uint i = 0; i < agroCount; i++) {
                             var address = new IntPtr(agroStructure.ToInt64() + i * agroSourceSize);
                             var agroEntry = new EnmityItem {
-                                ID = (uint) MemoryHandler.Instance.GetPlatformInt(address, MemoryHandler.Instance.Structures.EnmityItem.ID),
-                                Name = MemoryHandler.Instance.GetString(address + MemoryHandler.Instance.Structures.EnmityItem.Name),
-                                Enmity = MemoryHandler.Instance.GetUInt32(address + MemoryHandler.Instance.Structures.EnmityItem.Enmity),
+                                ID = (uint) MemoryHandler.Instance.GetPlatformInt(address, MemoryHandler.Instance.Structures.AgroItem.ID),
+                                Name = string.Empty,
+                                Enmity = MemoryHandler.Instance.GetUInt32(address + MemoryHandler.Instance.Structures.AgroItem.Enmity),
                             };
                             if (agroEntry.ID > 0) {
                                 result.CurrentPlayer.EnmityItems.Add(agroEntry);
